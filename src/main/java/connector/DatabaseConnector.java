@@ -8,14 +8,11 @@ public class DatabaseConnector {
         Connection con = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + DBName + "?useUnicode=true&characterEncoding=UTF-8","root","lixiaodong1996");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + DBName + "?useUnicode=true&characterEncoding=UTF-8","root","lixiaodong1996");//此处填写您数据库的用户名和密码
             System.out.println("Successfully connect to " + DBName);
         } catch (Exception e) {
             e.printStackTrace();
         }
         return con;
-    }
-    public static void main(String args[]){
-        getDatabaseConnection("BI_OLTP");
     }
 }

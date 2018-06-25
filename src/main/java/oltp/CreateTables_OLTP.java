@@ -6,10 +6,10 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class CreateTables {
+public class CreateTables_OLTP {
     public static String dbName = "BI_OLTP";
     public static void main(String args[]){
-        CreateTables ct = new CreateTables();
+        CreateTables_OLTP ct = new CreateTables_OLTP();
         ct.deleteIfExistTables();
         ct.createClientTable();
         ct.createProductTable();

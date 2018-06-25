@@ -6,10 +6,10 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class CreateTables {
+public class CreateTables_STAR {
     public static String dbName = "BI_STAR";
     public static void main(String args[]){
-        CreateTables createTables = new CreateTables();
+        CreateTables_STAR createTables = new CreateTables_STAR();
         createTables.createClientDim();
         createTables.createEmployeeDim();
         createTables.createProductDim();

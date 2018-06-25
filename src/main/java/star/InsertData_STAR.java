@@ -6,11 +6,11 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-//必须先运行CreateTables.java建表，然后再运行此类ETL插入数据
-public class InsertData {
+//必须先运行CreateTables_STAR.java建表，然后再运行此类ETL插入数据，同时必须先运行OLTP两个文件来建设源数据库
+public class InsertData_STAR {
     public static String dbName = "BI_STAR";
     public static void main(String args[]){
-        InsertData insertData = new InsertData();
+        InsertData_STAR insertData = new InsertData_STAR();
         insertData.insertData();
     }
 

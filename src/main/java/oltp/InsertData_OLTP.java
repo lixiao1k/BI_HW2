@@ -5,15 +5,14 @@ import connector.DatabaseConnector;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 
-//必须先运行CreateTables类才可运行此类
+//必须先运行CreateTables_OLTP类建表后才可运行此类
 
-public class InsertData {
+public class InsertData_OLTP {
     public static String dbName = "BI_OLTP";
     public static void main(String args[]){
-        InsertData insertData = new InsertData();
+        InsertData_OLTP insertData = new InsertData_OLTP();
         insertData.insert2product();
         insertData.insert2department();
         insertData.insert2employee();
@@ -106,11 +105,11 @@ public class InsertData {
             pstmt = conn.prepareStatement("");
             sql = "INSERT INTO employee VALUES "+
                     "('e000000001','李春','13713700001','T1','销售员','d000000001',5000),"+
-                    "('e000000002','卫怡雪','1371370002','T1','销售员','d000000001',5000),"+
-                    "('e000000003','何歆虹','1371370003','T1','销售员','d000000001',5000),"+
-                    "('e000000004','鲍晶','1371370004','T1','销售员','d000000001',5000),"+
-                    "('e000000005','彭凯','1371370005','T2','销售主管','d000000001',8000),"+
-                    "('e000000006','陈丽华','1371370006','T2','销售主管','d000000001','8000')";
+                    "('e000000002','卫怡雪','13713700002','T1','销售员','d000000001',5000),"+
+                    "('e000000003','何歆虹','13713700003','T1','销售员','d000000001',5000),"+
+                    "('e000000004','鲍晶','13713700004','T1','销售员','d000000001',5000),"+
+                    "('e000000005','彭凯','13713700005','T2','销售主管','d000000001',8000),"+
+                    "('e000000006','陈丽华','13713700006','T2','销售主管','d000000001','8000')";
             pstmt.addBatch(sql);
             pstmt.executeBatch();
             conn.commit();
